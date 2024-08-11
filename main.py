@@ -2,6 +2,9 @@ from selenium import webdriver
 
 from utils import click_element, navigate_back, time_sleep, get_all_h2_tags, print_here
 
+# Print a message
+print_here("Starting the script...")
+
 # Initialize WebDriver
 driver = webdriver.Chrome()  # or webdriver.Firefox(), webdriver.Edge(), etc.
 

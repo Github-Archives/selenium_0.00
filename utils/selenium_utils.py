@@ -50,5 +50,5 @@ def time_sleep(seconds):
     time.sleep(seconds)
 
 
-def print_here(what_to_print="\tPrinting here..."):
+def print_here(what_to_print="\tPrinting..."):
     print(f"-> {what_to_print}")
