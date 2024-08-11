@@ -2,11 +2,11 @@
 # It also allows you to import functions from the selenium_utils.py file directly as a package.
 
 
-from .selenium_utils import click_element, navigate_back, time_sleep, get_all_h2_tags, print_here
+from .selenium_utils import click_element, navigate_back, time_sleep, get_all_h2_tags, print_here, click_notes_sequence, play_midi_music
 
 # Expose specific functions when the package is imported
 __all__ = ['click_element', 'navigate_back',
-           'time_sleep', 'get_all_h2_tags', 'print_here']
+           'time_sleep', 'get_all_h2_tags', 'print_here', 'click_notes_sequence', 'play_midi_music']
 
 
 # -----------------------------------------------------------

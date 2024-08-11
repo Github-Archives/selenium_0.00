@@ -1,2 +1,11 @@
 # Virtual Environment Files
 /myenv-selenium_0.00/
+
+# ! These are not working for the auto-generated __pycache__ files
+# Ignore __pycache__ directories and .pyc files
+__pycache__/
+*.pyc
+
+# Specifically ignore the files in utils/__pycache__
+utils/__pycache__/__init__.cpython-39.pyc
+utils/__pycache__/selenium_utils.cpython-39.pyc
