@@ -26,3 +26,8 @@ def navigate_back(driver, times=1, delay=2):
     for _ in range(times):
         driver.back()
         time.sleep(delay)
+
+
+def time_sleep(seconds):
+    """Pause the script for a specified number of seconds."""
+    time.sleep(seconds)
