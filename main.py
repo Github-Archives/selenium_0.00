@@ -1,53 +1,56 @@
-# from selenium import webdriver
-# from webdriver_manager.chrome import ChromeDriverManager
-
-# # Set up the Chrome WebDriver using webdriver-manager
-# driver = webdriver.Chrome(ChromeDriverManager().install())
-
-# # Open a webpage
-# driver.get("https://www.google.com")
-
-# # Perform any actions on the webpage
-# print(driver.title)
-
-# # Close the browser
-# driver.quit()
-
-
-# from selenium import webdriver
-# from webdriver_manager.chrome import ChromeDriverManager
-
-# # Set up the Chrome WebDriver using webdriver-manager
-# driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
-
-# # Open a webpage
-# driver.get("https://www.google.com")
-
-# # Perform any actions on the webpage
-# print(driver.title)
-
-# # Close the browser
-# driver.quit()
-
+import time
 
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 # Initialize WebDriver
 driver = webdriver.Chrome()  # or webdriver.Firefox(), webdriver.Edge(), etc.
 
-# Open a webpage
-driver.get("https://www.reddit.com")
+# Open the initial webpage
+driver.get("https://www.example.com")
 
-# Find an element
-search_box = driver.find_element("name", "q")
+# Wait for the first link to be clickable and click it
+first_link = WebDriverWait(driver, 10).until(
+    EC.element_to_be_clickable((By.XPATH, "//a[text()='More information...']"))
+)
+first_link.click()
 
-# Interact with the element
-search_box.send_keys("Selenium Python")
-search_box.send_keys(Keys.RETURN)
+# Wait for the second page to load and the second link to be clickable
+iana_managed_domains = WebDriverWait(driver, 10).until(
+    EC.element_to_be_clickable(
+        (By.XPATH, "//a[text()='IANA-managed Reserved Domains']"))
+)
 
-# Wait for a few seconds to see the results
-driver.implicitly_wait(10)  # waits up to 10 seconds
+# Click the second link
+iana_managed_domains.click()
+
+# Wait for a few seconds to observe the result
+time.sleep(3)  # pauses the script for 2 seconds
+
+
+# Wait for the second page to load and the second link to be clickable
+third_link = WebDriverWait(driver, 10).until(
+    EC.element_to_be_clickable(
+        (By.XPATH, "//a[text()='XN--HGBK6AJ7F53BBA']"))
+)
+third_link.click()
+time.sleep(3)  # pauses the script for 3 seconds
+
+# Navigate back to the previous page
+driver.back()
+
+time.sleep(0.5)
+
+driver.back()
+time.sleep(2)
+
+driver.back()
+time.sleep(2)
+
+first_link.click()
+time.sleep(2)
 
 # Close the browser
 driver.quit()
