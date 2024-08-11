@@ -18,5 +18,5 @@ source myenv/bin/activate
 
 # DELETE THIS
 
-Me Right Now
+My .venv name
 source myenv-selenium_0.00/bin/activate
