@@ -1,6 +1,6 @@
 from selenium import webdriver
 
-from utils import click_element, navigate_back, time_sleep, get_all_h2_tags, print_here, click_notes_sequence, play_midi_music
+from utils import click_element, navigate_back, time_sleep, get_all_h2_tags, print_here, play_midi_music
 
 # Print initial message
 print_here(
