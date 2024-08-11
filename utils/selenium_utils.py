@@ -73,7 +73,7 @@ def click_notes_sequence(driver, notes, delay=1.5):
 
 def play_midi_music(driver):
     # Click F4, wait 1 second, then click A4
-    # (driver, notes, delay=1.5)
+    # (driver, notes, delay=1)
     click_notes_sequence(driver, ['F4', 'A4'], delay=1)
 
     click_notes_sequence(
