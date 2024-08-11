@@ -1,4 +1,3 @@
-# This will contain your Selenium utility functions.
 import time
 
 from selenium.webdriver.common.by import By
