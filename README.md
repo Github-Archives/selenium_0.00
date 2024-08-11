@@ -3,11 +3,11 @@
 Create .venv Virtual Environment
 
 ```python
-python -m venv myenv-selenium_0.00
+python -m venv myenv
 ```
 
 Activate your Virtual Environment
 
 ```python
-source myenv-selenium_0.00/bin/activate
+source myenv/bin/activate
 ```
