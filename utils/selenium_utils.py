@@ -12,6 +12,24 @@ from selenium.webdriver.support import expected_conditions as EC
 # first_link.click()
 # ! Original Code For This ↑
 
+# * Search for your elements in this order-of-presidents: (For speed, simplicity, and readability)
+
+# *id
+
+# *name
+
+# *CSS Selectors
+
+
+def get_all_h2_tags(driver, timeout=10):
+    """Find and return all H2 tags on the page."""
+    return WebDriverWait(driver, timeout).until(
+        EC.presence_of_all_elements_located((By.CSS_SELECTOR, "h2"))
+    )
+
+
+# *XPATH (Good for complex queries, or when I don't have other options, but it's slower and more prone to errors)
+
 
 def click_element(driver, xpath, timeout=10):
     """Wait for an element to be clickable and click it."""
@@ -31,3 +49,7 @@ def navigate_back(driver, times=1, delay=2):
 def time_sleep(seconds):
     """Pause the script for a specified number of seconds."""
     time.sleep(seconds)
+
+
+def print_here(what_to_print="\tPrinting here..."):
+    print(f"-> {what_to_print}")
